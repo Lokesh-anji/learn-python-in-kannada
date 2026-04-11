@@ -44,6 +44,24 @@ x = 10
 print(type(x))  # Output: <class 'int'>
 ```
 
+#### **To know mem location of the variable:**
+You can use the `id()` function to check the unique identity (address) of an object/variable in memory.
+```python
+a = 10
+
+print(id(a))  
+```
+
+#### **To know size of the variable:**
+You can use the `type()` function to check the type of a variable.
+```python
+import sys
+
+a=10
+print(sys.getsizeof(a))
+print(type(a))              #This tells you how many bytes the object takes in memory.
+```
+
 ### **3. Type Conversion**
 Python allows you to convert between data types using functions like `int()`, `float()`, `str()`, etc.
 
@@ -55,6 +73,24 @@ z = float(y)  # Convert integer to float
 print(z)  # Output: 10.0
 ```
 
+#### **Example:**
+```python
+a = "11"
+print(int(a))     # 11
+print(float(a))   # 11.0
+✔️ This works because "11" is a valid numeric string.
+```
+
+```python
+c = "abc"
+print(int(c))  # ❌ ValueError: invalid literal for int() with base 10: 'abc'
+```
+
+Note: 
+1. You can convert(Type casting) a string to int or float only if the string is a valid number.
+2. You can convert(Type casting) a Boolean(True,False) to int or float types.(True -->1 , False -->0)
+3. We can't concatenate two different data type values, unless we do (type casting)
+
 ### **4. Arithmetic Operators**
 Python supports basic arithmetic operations like addition, subtraction, multiplication, division, and more.
 
@@ -62,9 +98,9 @@ Python supports basic arithmetic operations like addition, subtraction, multipli
 - `+` (Addition)
 - `-` (Subtraction)
 - `*` (Multiplication)
-- `/` (Division)
-- `//` (Floor Division)
-- `%` (Modulus)
+- `/` (Division)  --> exact quotient (decimal value)
+- `//` (Floor Division) --> floor value of the quotient (removes decimal part)
+- `%` (Modulus) --> Gives the remainder
 - `**` (Exponentiation)
 
 #### **Examples:**
@@ -76,7 +112,7 @@ print(a - b)  # Output: 7
 print(a * b)  # Output: 30
 print(a / b)  # Output: 3.3333...
 print(a // b)  # Output: 3 (Floor Division)
-print(a % b)  # Output: 1 (Modulus)
+print(a % b)  # Output: 1 (Modulus) Gives the remainder
 print(a ** b)  # Output: 1000 (Exponentiation)
 ```
 
@@ -107,7 +143,6 @@ print(x)  # Output: 5
 x = 10
 print(x)  # Output: 10
 ```
-
 ---
 
 ### **Homework**
