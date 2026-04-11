@@ -90,6 +90,7 @@ Note:
 1. You can convert(Type casting) a string to int or float only if the string is a valid number.
 2. You can convert(Type casting) a Boolean(True,False) to int or float types.(True -->1 , False -->0)
 3. We can't concatenate two different data type values, unless we do (type casting)
+4. We can convert almost any data type to a string using str() in Python.
 
 ### **4. Arithmetic Operators**
 Python supports basic arithmetic operations like addition, subtraction, multiplication, division, and more.
