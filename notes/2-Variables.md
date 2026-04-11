@@ -9,6 +9,14 @@ x = 5  # Assigning an integer value to the variable x
 y = "Hello"  # Assigning a string value to the variable y
 ```
 
+### **2. Literals in Python**
+Literals in Python are the values given to the variables..
+
+#### **Syntax for Literals Assignment:**
+```python
+name = "John"  #Here, "John" is a string literal.
+```
+
 #### **Variable Naming Rules:**
 - Variable names can contain letters (a-z, A-Z), numbers (0-9), and underscores (_).
 - Variable names can't contain any other special symbols other than (_).
