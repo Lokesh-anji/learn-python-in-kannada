@@ -4,6 +4,8 @@
 
 A list is a collection of items that are **ordered**, **mutable** (changeable), and **allow duplicate elements**. Lists can hold items of different data types, such as integers, strings, or even other lists.
 
+**Ordered** means items in a list maintain a specific sequence, and Python preserves that sequence unless explicitly modified.
+
 #### **Syntax**:
 ```python
 my_list = [element1, element2, element3, ...]
@@ -43,24 +45,26 @@ print(fruits[-2])  # Output: banana
 ---
 
 ### **3. Modifying Lists**
-
 Lists are mutable, which means you can change the value of items in a list.
 
 #### **Changing a specific element**:
 ```python
+fruits = ["apple", "banana", "cherry"]
 fruits[1] = "orange"
 print(fruits)  # Output: ['apple', 'orange', 'cherry']
 ```
 
-#### **Adding elements**:
+### **4. Lists Operations/Methods**
 - `append()`: Adds an element to the **end** of the list.
   ```python
+  fruits = ["apple", "orange", "cherry"]
   fruits.append("grape")
   print(fruits)  # Output: ['apple', 'orange', 'cherry', 'grape']
   ```
 
 - `insert()`: Inserts an element at a **specific index**.
   ```python
+  fruits = ["apple", "orange", "cherry"]
   fruits.insert(1, "kiwi")
   print(fruits)  # Output: ['apple', 'kiwi', 'orange', 'cherry']
   ```
@@ -68,24 +72,105 @@ print(fruits)  # Output: ['apple', 'orange', 'cherry']
 #### **Removing elements**:
 - `remove()`: Removes the first occurrence of an element.
   ```python
+  fruits = ['apple', 'kiwi', 'orange', 'cherry']
   fruits.remove("orange")
   print(fruits)  # Output: ['apple', 'kiwi', 'cherry']
   ```
 
 - `pop()`: Removes the element at a specific index (or the last item if no index is provided).
   ```python
+  fruits = ['apple', 'kiwi', 'orange', 'cherry']
   fruits.pop()  # Removes the last item
-  print(fruits)  # Output: ['apple', 'kiwi']
+  print(fruits)  # Output: ['apple', 'kiwi', 'orange']
   
   fruits.pop(0)  # Removes the first item
-  print(fruits)  # Output: ['kiwi']
+  print(fruits)  # Output: ['kiwi', 'orange', 'cherry']
   ```
 
 - `clear()`: Removes all elements from the list.
   ```python
+  fruits = ['apple', 'kiwi', 'orange', 'cherry']
   fruits.clear()
   print(fruits)  # Output: []
   ```
+
+- `copy()`: Returns a shallow copy of the list.
+
+A **shallow copy** means: you create a new list object, but the elements inside it are not fully copied—they are just references to the same objects in memory.
+
+  ```python
+  # Example with mutable objects.
+
+  fruits = ['apple', 'kiwi', 'orange', 'cherry']
+  print(fruits)     # ['apple', 'kiwi', 'orange', 'cherry']
+  a=fruits.copy()
+  print(a)          # ['apple', 'kiwi', 'orange', 'cherry']
+  a[0]="banana"
+  print(fruits)     # ['apple', 'kiwi', 'orange', 'cherry']  --> origional list not changed, bcz Here in the  example the list "fruit" contains strings of elements ,which are immutable
+
+  print(a)          # ['banana', 'kiwi', 'orange', 'cherry']
+#---------------------------------------------------------------#
+# Example with mutable objects.
+
+  fruits = [['apple', 'red'], ['kiwi', 'green']]
+  print(fruits)      # [['apple', 'red'], ['kiwi', 'green']]
+  a=fruits.copy()
+  print(a)           # [['apple', 'red'], ['kiwi', 'green']]
+  a[0][0]="banana"
+  print(fruits)      # [['banana', 'red'], ['kiwi', 'green']]  --> Now origional lists items got changed, Because inner lists are shared (same references)
+  print(a)           # [['banana', 'red'], ['kiwi', 'green']]
+
+```
+- `count()`: Counts how many times a value appears.
+```python
+  fruits = ['apple', 'kiwi', 'orange', 'cherry']
+  print(fruits.count("apple"))    # 1
+```
+
+- `extend()`: Adds elements from another list (or iterable).
+```python
+  fruits = ['apple', 'kiwi']
+  fruits.extend(['orange','cherry'])
+  print(fruits)            # ['apple', 'kiwi', 'orange', 'cherry']
+
+  #Iterable example
+  fruits = ['apple', 'kiwi']
+  a=['orange','cherry']
+  fruits.extend(a)
+  print(fruits)           # ['apple', 'kiwi', 'orange', 'cherry']
+  ```
+
+- `index()`: Returns the position (index) of an element.
+```python
+  fruits = ['apple', 'kiwi', 'orange', 'cherry']
+  print(fruits.index('kiwi'))   # 1
+```
+
+- `reverse()`: Reverse the list.
+```python
+  fruits = ['apple', 'kiwi', 'orange', 'cherry']
+  fruits.reverse()
+  print(fruits)      # ['cherry', 'orange', 'kiwi', 'apple']
+```
+
+- `sort()`: Sorts the list (ascending by default).
+```python
+  fruits = ['apple', 'kiwi', 'orange', 'cherry']
+  fruits.sort()
+  print(fruits)    # ['apple', 'cherry', 'kiwi', 'orange']
+
+  num=[1,5,3,6,7]
+  num.sort()
+  print(num)       # [1, 3, 5, 6, 7]
+
+  fruits = ['apple', 'kiwi', 'orange', 'cherry']
+  fruits.sort(reverse=True)
+  print(fruits)     # ['orange', 'kiwi', 'cherry', 'apple']
+
+  num=[1,5,3,6,7]
+  num.sort(reverse=True)
+  print(num)        # [7, 6, 5, 3, 1]
+```
 
 ---
 
@@ -134,31 +219,6 @@ Python provides several built-in functions and methods for working with lists.
   ```python
   numbers = [1, 2, 3, 4]
   print(sum(numbers))  # Output: 10
-  ```
-
-#### **5.2 Common Methods**:
-- `index(element)`: Returns the index of the first occurrence of the specified element.
-  ```python
-  print(fruits.index("apple"))  # Output: 0
-  ```
-
-- `count(element)`: Returns the number of occurrences of an element in the list.
-  ```python
-  numbers = [1, 2, 3, 1, 1]
-  print(numbers.count(1))  # Output: 3
-  ```
-
-- `reverse()`: Reverses the elements of the list in place.
-  ```python
-  fruits.reverse()
-  print(fruits)  # Output: ['cherry', 'orange', 'apple']
-  ```
-
-- `sort()`: Sorts the list in place (ascending by default).
-  ```python
-  numbers = [5, 2, 9, 1]
-  numbers.sort()
-  print(numbers)  # Output: [1, 2, 5, 9]
   ```
 
 ---

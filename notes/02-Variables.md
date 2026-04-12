@@ -36,12 +36,16 @@ Python has various built-in data types. Some common ones are:
 - **float**: For floating-point numbers (e.g., 3.14, -0.001)
 - **str**: For strings (e.g., "Hello", "Python")
 - **bool**: For boolean values (True or False)
+- **None**: None is a built-in constant in Python.Its type is NoneType. It represents the absence of a value or a null value.
 
 #### **Type Checking:**
 You can use the `type()` function to check the type of a variable.
 ```python
 x = 10
 print(type(x))  # Output: <class 'int'>
+
+a=None
+print(type(a))  # Output: <class 'NoneType'>
 ```
 
 #### **To know mem location of the variable:**
