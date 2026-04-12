@@ -82,14 +82,14 @@ print("python".index("k"))   # ValueError: substring not found
 print("banana".count("a"))   # 3
 print("banana".count("k"))   # 0
 
-#startswith() ➡️ Returns true if the string starts with the specified value
+#startswith() ➡️ Returns true if the string starts with the specified value.
 print("python".startswith("p"))   # True
 print("python".startswith("k"))   # False
 
-#endswith() ➡️ Returns true if the string starts with the specified value
+#endswith() ➡️ Returns true if the string ends with the specified value.
 print("python".endswith("n"))   # True
 
-#isalpha() ➡️ Returns True if all characters in the string are in the alphabet
+#isalpha() ➡️ Returns True if all characters in the string are in the alphabet.
 print("python".isalpha())   # True
 print("python ".isalpha())   # False
 
@@ -108,10 +108,10 @@ print("".isspace())   # False
 
 #islower() ➡️ Returns True if all characters in the string are lower case.
 print("python".islower())   # True
-print("Python".islower())   # Flase
+print("Python".islower())   # False
 
 #isupper() ➡️ Returns True if all characters in the string are upper case
-print("Python".isupper())  # Flase
+print("Python".isupper())  # False
 print("PYTHON".isupper())  # True
 
 #center() ➡️ Print the word "hi", taking up the space of 10 characters, with "banana" in the middle:
