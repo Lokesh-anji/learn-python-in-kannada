@@ -130,6 +130,11 @@ print(type(b))     # <class 'str'>
 a="My name - is Lokesh"
 print(a.split())       # ['My', 'name', '-', 'is', 'Lokesh']    
 print(a.split("-"))    # ['My name ', ' is Lokesh']
+
+#len() ➡️ provides the len of the string.
+a="Lokesh"
+print(len(a))       # 6 
+
 ```
 
 #### **2.3 Accessing String Characters:**
@@ -143,6 +148,7 @@ print(text[2])  # Output: t
 
 You can also use **negative indexing** to start counting from the end of the string.
 ```python
+-5 -4 -3 -2 -1  0  1  2  3  4
 print(text[-1])  # Output: n
 print(text[-3])  # Output: h
 ```
@@ -155,6 +161,9 @@ text = "Python Programming"
 print(text[0:6])  # Output: Python (extracts from index 0 to 5)
 print(text[:6])  # Output: Python (same as above)
 print(text[7:])  # Output: Programming (from index 7 to the end)
+
+[Start:End:Step]
+#By default 'Step' is 1
 ```
 
 ---

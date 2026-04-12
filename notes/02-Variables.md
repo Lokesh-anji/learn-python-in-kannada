@@ -53,13 +53,11 @@ print(id(a))
 ```
 
 #### **To know size of the variable:**
-You can use the `type()` function to check the type of a variable.
+You can use the `getsizeof()` function to check the type of a variable.
 ```python
 import sys
-
 a=10
-print(sys.getsizeof(a))
-print(type(a))              #This tells you how many bytes the object takes in memory.
+print(sys.getsizeof(a))   #This tells you how many bytes the object takes in memory.
 ```
 
 ### **3. Type Conversion**
