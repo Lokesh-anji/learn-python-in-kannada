@@ -6,6 +6,8 @@ A list is a collection of items that are **ordered**, **mutable** (changeable), 
 
 **Ordered** means items in a list maintain a specific sequence, and Python preserves that sequence unless explicitly modified.
 
+**Note:** The datatypes which are ordered (like list, string, and tuple) allow indexing.
+
 #### **Syntax**:
 ```python
 my_list = [element1, element2, element3, ...]

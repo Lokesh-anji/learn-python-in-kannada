@@ -2,7 +2,7 @@
 
 ### **1. Tuples in Python**
 
-A tuple is a collection of items that is **ordered** and **immutable** (unchangeable). Tuples are similar to lists, but once a tuple is created, you cannot modify it. They are often used to group related data together.
+A tuple is a collection of items that is **ordered** and **immutable** (unchangeable) and allow duplicates. Tuples are similar to lists, but once a tuple is created, you cannot modify it. They are often used to group related data together.
 
 #### **Syntax**:
 ```python
@@ -51,7 +51,11 @@ You can combine two or more tuples using the `+` operator.
 ```python
 tuple1 = (1, 2, 3)
 tuple2 = (4, 5, 6)
-combined_tuple = tuple1 + tuple2
+print(combined_tuple= tuple1 + tuple2) # ❌,We cannot do assignment inside a function call like print()
+
+tuple1 = (1, 2, 3)
+tuple2 = (4, 5, 6) 
+combined_tuple = tuple1 + tuple2  # ✅ Correct way
 print(combined_tuple)  # Output: (1, 2, 3, 4, 5, 6)
 ```
 
@@ -92,7 +96,10 @@ Though tuples are immutable, Python provides some built-in methods for working w
 
 - **Immutable**: This property ensures that tuple data cannot be modified after creation, making them useful for fixed data.
 - **Faster than Lists**: Due to immutability, tuples are generally faster than lists.
-- **Can Be Used as Keys in Dictionaries**: Since tuples are hashable, they can be used as keys in dictionaries, unlike lists.
+- **Can Be Used as Keys in Dictionaries**: Since tuples are hashable(a unique number), they can be used as keys in dictionaries, unlike lists.
+
+**Immutable** → Hashable (tuple, string, int) ✔️
+**Mutable** → Not hashable (list, dict, set) ❌
 
 ---
 
@@ -103,12 +110,33 @@ A set is a collection of **unique** items that is **unordered** and **unindexed*
 #### **Syntax**:
 ```python
 my_set = {element1, element2, element3, ...}
+my_set = set(1,2,3)  # ❌ TypeError: set expected at most 1 argument, got 3
+my_set = set(iterables) # ✔
+
+a=[1,2,3,4]
+my_set = set(a) 
+print(my_set)     # ✔ 
+
+b=[1,2,3,4]
+for items in b:
+    my_set1 = set(items) 
+print(my_set1)             # ❌ TypeError: 'int' object is not iterable , set() needs an iterable, not a single number
+
+b = [1, 2, 3, 4]
+my_set1 = set()
+for item in b:
+    my_set1.add(item)
+print(my_set1)            # ✔ 
+
 ```
 
 #### **Example**:
 ```python
-fruits_set = {"apple", "banana", "cherry"}
-numbers_set = {1, 2, 3, 4, 5}
+fruits_set = {"apple", "banana", "cherry"}   # {'banana', 'apple', 'cherry'}
+numbers_set = {1, 2, 3, 4, 5}    # {1, 4, 5, 23, 45}
+
+print(fruits_set[1]) # ❌ TypeError: 'set' object is not subscriptable, sets are un-ordered , so it doesn;t allow indexing.
+
 ```
 
 #### **Empty Set**:
@@ -196,6 +224,12 @@ Sets come with several useful methods for performing common tasks.
 | **Common Uses**  | General collection | Fixed data        | Unique items      |
 
 ---
+### **10. Frzoneset in Python**
+
+
+
+---
+
 
 ### **Homework**
 
