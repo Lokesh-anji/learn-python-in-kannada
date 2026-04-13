@@ -105,7 +105,7 @@ Though tuples are immutable, Python provides some built-in methods for working w
 
 ### **6. Sets in Python**
 
-A set is a collection of **unique** items that is **unordered** and **unindexed**. Sets do not allow duplicate values. Sets are useful for performing operations like union, intersection, and difference.
+A set is a collection of **unique** items that is **unordered** and **unindexed** and unlike tuple ,set is **mutable**. Sets do not allow duplicate values. Sets are useful for performing operations like union, intersection, and difference.
 
 #### **Syntax**:
 ```python
@@ -148,6 +148,8 @@ empty_set = set()
 ---
 
 ### **7. Set Operations**
+
+**Note:** data type operations and methods are different in Python, because each data type is built for a specific use case.
 
 Sets support mathematical operations like union, intersection, and difference.
 
@@ -221,6 +223,11 @@ Sets come with several useful methods for performing common tasks.
 | **Duplicates**   | Allows duplicates  | Allows duplicates | No duplicates     |
 | **Indexing**     | Supports indexing  | Supports indexing | No indexing       |
 | **Operations**   | List operations    | Tuple operations  | Set operations    |
+| **Hashable**     | No                 | Yes               | No                |
+| **Memory**       | More               | Less              | More              |
+| **Search Speed** | Slow               | Slow              | Fast              |
+| **Add/Remove**   | Yes                | No                | Yes               |
+| **Dict Key**     | No                 | Yes               | No                |
 | **Common Uses**  | General collection | Fixed data        | Unique items      |
 
 ---
