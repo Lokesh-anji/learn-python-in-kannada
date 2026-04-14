@@ -26,8 +26,8 @@ print(f"Hello, {name}! You are {age} years old.")
 
 ### **2. String Manipulation**
 
-Strings are sequences of characters. Python provides many useful methods to manipulate strings.
-
+A string is an immutable sequence of characters enclosed in quotes, used to represent text in Python.. Python provides many useful methods to manipulate strings.
+ 
 #### **2.1 Common String Operations:**
 
 - **Concatenation**: Joining two or more strings together using the `+` operator.

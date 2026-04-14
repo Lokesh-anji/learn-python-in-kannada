@@ -1,10 +1,24 @@
 ## **Dictionaries in Python**
 
-A dictionary in Python is a collection of **key-value pairs**. Each key in a dictionary is associated with a value, and you can retrieve or manipulate data using the key. Unlike lists and tuples, dictionaries are **unordered** and **mutable** (changeable).
+A dictionary in Python is a collection of **key-value pairs**. Each key in a dictionary is associated with a value, and you can retrieve or manipulate data using the key, and dict is **mutable** (changeable).
 
 ### **1. Creating a Dictionary**
 
 You can create a dictionary using curly braces `{}` or the `dict()` function.
+
+**📘Rules for Dictionary in Python:**
+1. Keys must be immutable. 
+
+Keys should be of immutable types such as:
+str (string)
+int
+float
+tuple (only if it contains immutable elements)
+
+2. Keys must be unique.
+Duplicate keys are not allowed(If repeated, the last value overrides).
+
+3. Keys are case-sensitive.
 
 #### **Syntax**:
 ```python
@@ -72,6 +86,9 @@ You can remove items from a dictionary using several methods:
   del karnataka_food["Mangaluru"]
   ```
 
+**Note:** 👉 The difference between pop() and del is that pop() removes a key and returns its value, which can be stored or assigned, whereas del only deletes the key-value pair and does not return anything.
+
+
 - `clear()`: Empties the dictionary.
   ```python
   karnataka_food.clear()
@@ -100,6 +117,12 @@ Here are some common methods available for dictionaries:
   ```python
   new_dishes = {"Hubballi": "Girmit"}
   karnataka_food.update(new_dishes)
+  ```
+
+- `copy()`: Returns a shallow copy of the dictionary
+  ```python
+  food=karnataka_food.copy()
+  print(food)           ## {'Bengaluru': 'Bisi Bele Bath', 'Mysuru': 'Mysore Pak', 'Mangaluru': 'Neer Dosa'}
   ```
 
 ### **6. Dictionary Characteristics**
